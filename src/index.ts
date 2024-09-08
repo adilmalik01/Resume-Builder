@@ -1,6 +1,6 @@
 // Selecting form fields
 let firstName = document.querySelector('input[type="text"]:nth-of-type(1)') as HTMLInputElement;
-let lastName = document.querySelector('input[type="text"]:nth-of-type(2)') as HTMLInputElement;
+let lastName = document.querySelector('#lastName') as HTMLInputElement;
 let designation = document.querySelector('#designation') as HTMLInputElement;
 let yourself = document.querySelector('textarea') as HTMLTextAreaElement;
 
@@ -150,6 +150,9 @@ document.querySelector("form")?.addEventListener("submit", (e): void => {
     localStorage.setItem("resumeData", JSON.stringify(formData));
 
     console.log("Form data saved to localStorage:", formData);
+
+
+    window.location.href = "./my-resume.html"
 });
 
 
