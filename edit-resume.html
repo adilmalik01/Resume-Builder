@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Resume</title>
+    <title>Edit Resume</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/form.css">
 </head>
@@ -21,20 +21,18 @@
             <a href="./create-resume.html">Create Resume</a>
             <a href="./my-resume.html">My Resume</a>
         </div>
-    
-       
     </nav>
-
     <div class="mainDiv">
-        <form>
+        <form id="editResumeForm">
             <div class="headline">
                 <h2>About Me</h2>
             </div>
 
-            <!-- Image File Input -->
             <div class="input-label">
                 <label for="profileImage">Upload Profile Picture</label>
                 <input type="file" id="profileImage" accept="image/*">
+                <img id="profilePreview" src="" alt="Profile Image Preview"
+                    style="display:none; width: 100px; margin-top: 10px;">
             </div>
 
             <div class="input-group">
@@ -191,7 +189,6 @@
                 </div>
             </div>
 
-            <!-- Skills Section -->
             <div class="headline">
                 <h2>Skills</h2>
             </div>
@@ -203,14 +200,14 @@
                     </div>
                     <div class="input-label">
                         <label for="skill-level-1">Proficiency (%)</label>
-                        <input type="number" id="skill-level-1" placeholder="e.g., 90" min="0" max="100" required>
+                        <input type="number" id="skill-level-1" placeholder="e.g., 80" min="0" max="100" required>
                     </div>
                 </div>
 
                 <div class="input-group">
                     <div class="input-label">
                         <label for="skill-2">Skill</label>
-                        <input type="text" id="skill-2" placeholder="e.g., React" required>
+                        <input type="text" id="skill-2" placeholder="e.g., React.js" required>
                     </div>
                     <div class="input-label">
                         <label for="skill-level-2">Proficiency (%)</label>
@@ -225,38 +222,19 @@
                     </div>
                     <div class="input-label">
                         <label for="skill-level-3">Proficiency (%)</label>
-                        <input type="number" id="skill-level-3" placeholder="e.g., 80" min="0" max="100" required>
-                    </div>
-                </div>
-
-                <div class="input-group">
-                    <div class="input-label">
-                        <label for="skill-4">Skill</label>
-                        <input type="text" id="skill-4" placeholder="e.g., Python" required>
-                    </div>
-                    <div class="input-label">
-                        <label for="skill-level-4">Proficiency (%)</label>
-                        <input type="number" id="skill-level-4" placeholder="e.g., 75" min="0" max="100" required>
-                    </div>
-                </div>
-
-                <div class="input-group">
-                    <div class="input-label">
-                        <label for="skill-5">Skill</label>
-                        <input type="text" id="skill-5" placeholder="e.g., Python" required>
-                    </div>
-                    <div class="input-label">
-                        <label for="skill-level-5">Proficiency (%)</label>
-                        <input type="number" id="skill-level-5" placeholder="e.g., 75" min="0" max="100" required>
+                        <input type="number" id="skill-level-3" placeholder="e.g., 70" min="0" max="100" required>
                     </div>
                 </div>
             </div>
 
-                <button type="submit">Generate Resume</button>
+            <div class="button-container">
+                <button class="save-btn" type="submit">Save Changes</button>
+            </div>
         </form>
     </div>
 
-    <script src="src/index.js"></script>
+    <script src="./src/edit-resume.js"></script>
+
 </body>
 
 </html>

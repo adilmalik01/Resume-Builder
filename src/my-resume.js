@@ -2,6 +2,7 @@
 var _a, _b, _c, _d;
 let profileImage = document.querySelector('.imgBox img');
 const resumeData = JSON.parse(localStorage.getItem("resumeData") || '{}');
+console.log("hello");
 // Function to set text content
 function setText(selector, text) {
     const element = document.querySelector(selector);
@@ -72,4 +73,26 @@ if (experienceList && Array.isArray(resumeData.experience)) {
 const skillsList = document.querySelector("#skillsList");
 if (skillsList && Array.isArray(resumeData.skills)) {
     skillsList.innerHTML = resumeData.skills.map((skill) => createSkillItem(skill.skill, skill.level)).join('');
+}
+function downloadResume() {
+    const resumeElement = document.querySelector('.container');
+    if (!resumeElement) {
+        console.error('Resume container not found!');
+        return;
+    }
+    const options = {
+        margin: 0.5,
+        filename: 'My_Resume.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 1 },
+        jsPDF: { unit: 'in', format: "a4", orientation: 'portrait' },
+    };
+    window.html2pdf().from(resumeElement).set(options).save();
+}
+const downloadButton = document.getElementById('downloadResume');
+if (downloadButton) {
+    downloadButton.addEventListener('click', downloadResume);
+}
+else {
+    console.error('Download button not found!');
 }

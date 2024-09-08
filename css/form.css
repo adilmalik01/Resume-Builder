@@ -178,7 +178,7 @@ button:hover {
         gap: 50px;
         min-height: auto;
         /* background-color: aqua; */
-        padding: 10px 5px;
+        padding: 10px 10px;
     }
 
     .headline {
@@ -278,4 +278,16 @@ button:hover {
         height: 40px;
         font-size: 16px;
     }
+}
+
+
+.button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.save-btn {
+    width: 50% !important;
 }
